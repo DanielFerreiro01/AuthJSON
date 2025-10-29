@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuthJSON - API Documentation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <div class="background-grid"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span class="logo-icon">🔐</span>
+                <span>AuthJSON</span>
+            </div>
+
+            <h1>Craft Beautiful <br><span class="gradient-text">API Endpoints</span></h1>
+            <p class="subtitle">Mock REST API with JWT Authentication. Easily integrate it into your projects.</p>
+            
+            <div class="badge">
+                <span class="badge-dot"></span>
+                <span>Server Running</span>
+            </div>
+        </header>
+
+        <div class="main-container">
+            <div class="main-tabs">
+                <button class="main-tab active" onclick="switchTab('auth')">Auth</button>
+                <button class="main-tab" onclick="switchTab('collections')">Collections</button>
+            </div>
+
+            <div class="main-content auth-content active" id="authContent">
+                
+                <div class="auth-wrapper">
+                    <div class="auth-sidebar">
+                        <div class="auth-tabs-list">
+                            <button class="auth-tab active" onclick="selectAuthOption('login')">
+                                <span>🔓</span>
+                                <span>Login</span>
+                            </button>
+                            <button class="auth-tab" onclick="selectAuthOption('register')">
+                                <span>📝</span>
+                                <span>Register</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="auth-content-area">
+                        <div class="auth-option-content active" data-option="login">
+                            <div class="auth-option-header">
+                                <h3 class="auth-option-name">Login</h3>
+                                <p class="auth-option-desc">Authenticate and get your JWT token</p>
+                            </div>
+                            
+                            <div class="endpoints-list">
+                                <div class="endpoint-item">
+                                    <div class="endpoint-main">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="endpoint-path">/api/auth/login</span>
+                                    </div>
+                                    <div class="endpoint-permissions">
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="auth-option-content" data-option="register">
+                            <div class="auth-option-header">
+                                <h3 class="auth-option-name">Register</h3>
+                                <p class="auth-option-desc">Create a new user account</p>
+                            </div>
+                            
+                            <div class="endpoints-list">
+                                <div class="endpoint-item">
+                                    <div class="endpoint-main">
+                                        <span class="method-tag method-post">POST</span>
+                                        <span class="endpoint-path">/api/auth/register</span>
+                                    </div>
+                                    <div class="endpoint-permissions">
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content" id="collectionsContent">
+
+                <div class="collections-wrapper">
+                    <div class="collections-sidebar">
+                        <div id="tabsContainer">
+                            <div class="loading">
+                                <div class="spinner"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="collections-content-area">
+                        <div id="loadingContainer">
+                            <div class="loading">
+                                <div class="spinner"></div>
+                                <p class="loading-text">Loading collections...</p>
+                            </div>
+                        </div>
+                        <div id="collectionsData"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="totalCollections">-</div>
+                <div class="stat-label">Collections</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="totalEndpoints">-</div>
+                <div class="stat-label">Endpoints</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Free & Open</div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/public.js"></script>
+</body>
+</html>
